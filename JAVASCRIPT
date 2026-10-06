@@ -1,0 +1,62 @@
+let cart = [];
+
+function addToCart(productName, price) {
+    cart.push({
+        name: productName,
+        price: price
+    });
+
+    document.getElementById("cart-count").textContent = cart.length;
+
+    alert(productName + " has been added to your cart!");
+}
+
+function showCart() {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    let total = 0;
+    let message = "YOUR CART\n\n";
+
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} - UGX ${item.price.toLocaleString()}\n`;
+        total += item.price;
+    });
+
+    message += `\nTotal: UGX ${total.toLocaleString()}`;
+
+    alert(message);
+}
+
+function searchProducts() {
+
+    const searchValue =
+        document.getElementById("search").value.toLowerCase();
+
+    const products =
+        document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        const productName =
+            product.dataset.name.toLowerCase();
+
+        if (productName.includes(searchValue)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your message has been received.");
+
+    event.target.reset();
+}
