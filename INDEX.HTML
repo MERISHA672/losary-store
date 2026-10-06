@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampala Fresh | Fresh Groceries Delivered</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Kampala<span>Fresh</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart <span id="cart-count">0</span>
+        </button>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p class="small-title">FRESH • LOCAL • AFFORDABLE</p>
+
+        <h1>Fresh groceries,<br><span>delivered to you.</span></h1>
+
+        <p>
+            Shop fresh fruits, vegetables and everyday essentials
+            from trusted local suppliers in Kampala.
+        </p>
+
+        <a href="#products" class="hero-btn">Shop Now</a>
+    </div>
+
+    <div class="hero-card">
+        <div class="basket">🧺</div>
+        <h3>Fresh Every Day</h3>
+        <p>Quality products from local farmers.</p>
+    </div>
+</section>
+
+<section id="products" class="products-section">
+
+    <div class="section-heading">
+        <p>OUR PRODUCTS</p>
+        <h2>Fresh from the market</h2>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="search"
+            placeholder="Search for a product..."
+            onkeyup="searchProducts()"
+        >
+    </div>
+
+    <div class="products">
+
+        <div class="product" data-name="irish potatoes">
+            <div class="product-icon">🥔</div>
+            <h3>Irish Potatoes</h3>
+            <p>Fresh and locally sourced</p>
+            <strong>UGX 4,000 / kg</strong>
+            <button onclick="addToCart('Irish Potatoes', 4000)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" data-name="tomatoes">
+            <div class="product-icon">🍅</div>
+            <h3>Fresh Tomatoes</h3>
+            <p>Juicy and farm fresh</p>
+            <strong>UGX 5,000 / kg</strong>
+            <button onclick="addToCart('Fresh Tomatoes', 5000)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" data-name="bananas">
+            <div class="product-icon">🍌</div>
+            <h3>Matoke</h3>
+            <p>Fresh Ugandan bananas</p>
+            <strong>UGX 8,000 / bunch</strong>
+            <button onclick="addToCart('Matoke', 8000)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" data-name="avocado">
+            <div class="product-icon">🥑</div>
+            <h3>Avocado</h3>
+            <p>Rich, creamy and fresh</p>
+            <strong>UGX 2,000 each</strong>
+            <button onclick="addToCart('Avocado', 2000)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" data-name="pineapple">
+            <div class="product-icon">🍍</div>
+            <h3>Pineapple</h3>
+            <p>Sweet tropical fruit</p>
+            <strong>UGX 6,000 each</strong>
+            <button onclick="addToCart('Pineapple', 6000)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product" data-name="carrots">
+            <div class="product-icon">🥕</div>
+            <h3>Carrots</h3>
+            <p>Fresh and crunchy</p>
+            <strong>UGX 3,000 / kg</strong>
+            <button onclick="addToCart('Carrots', 3000)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div>
+        <p class="small-title">WHY KAMPALA FRESH?</p>
+        <h2>Good food should be simple.</h2>
+    </div>
+
+    <div class="about-text">
+        <p>
+            Kampala Fresh connects customers with quality local produce.
+            Our goal is to make grocery shopping easier, faster and more
+            affordable for people around Kampala.
+        </p>
+
+        <div class="features">
+            <div>
+                <h3>🚚 Fast Delivery</h3>
+                <p>We deliver around Kampala.</p>
+            </div>
+
+            <div>
+                <h3>🌱 Local Produce</h3>
+                <p>We support local farmers.</p>
+            </div>
+
+            <div>
+                <h3>💰 Fair Prices</h3>
+                <p>Quality without high prices.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="section-heading">
+        <p>GET IN TOUCH</p>
+        <h2>Contact Kampala Fresh</h2>
+    </div>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your message..." required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <div class="logo">Kampala<span>Fresh</span></div>
+    <p>Fresh groceries. Local people. Better living.</p>
+    <p>© 2026 Kampala Fresh. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
